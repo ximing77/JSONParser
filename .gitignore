@@ -17,3 +17,8 @@ JSONParser/x64/Debug/JSONParser.exe
 JSONParser/x64/Debug/JSONParser.ilk
 JSONParser/x64/Debug/JSONParser.pdb
 JSONParser/JSONParser/x64/Debug/main.obj
+JSONParser/JSONParser/x64/Debug/JSONAutoMata.obj
+JSONParser/JSONParser/x64/Debug/JSONParser.tlog/JSONParser.write.1u.tlog
+JSONParser/x64/Debug/JSONParser.exp
+JSONParser/x64/Debug/JSONParser.lib
+JSONParser/JSONParser/x64/Debug/JSONParserTest.obj

@@ -3,11 +3,19 @@
 
 #include "stdafx.h"
 
+#include "JSONParserTest.h"
+
 int main()
 {
-	cout << "Hello World" << endl;
+	int nRet =  TestJSONParser();
+	if (nRet != 0)
+	{
+		cout << "error" << endl;
+	}
+
 	char cGet;
 	cin >> cGet;
-    return 0;
+
+	return 0;
 }
 
