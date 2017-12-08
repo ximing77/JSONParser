@@ -8,8 +8,8 @@ typedef enum JSONParserWraperType
 {
 	JSONParserWrapperType_None = 0,
 	JSONParserWrapperType_Value_PlaceHolder,
-	JSONParserWrapperType_Vector_Void,
-	JSONParserWrapperType_Map_Void,
+	JSONParserWrapperType_Vector,
+	JSONParserWrapperType_Map,
 	JSONParserWrapperType_StringBuffer,
 	JSONParserWrapperType_String,
 	JSONParserWrapperType_Bool,
@@ -47,12 +47,17 @@ private:
 public:
 	JSONParser();
 	~JSONParser();
-	map<string, void*>* parse(string strJSON);
+	map<string, void*>* parse(string strJSON); // 不建议使用
+	map<string, JSONParserWrapper>* wrapperParse(string strJSON);
 	string dissemble(map<string, JSONParserWrapper> *mpJSONObj);
-	void* mapSafeAccess(map<string, void*>* mpJSON, string strKey);
-	int mapDelete(map<string, void*>* mpJSON);
+	void* mapSafeAccess(map<string, JSONParserWrapper>* mpJSON, string strKey);
+	void* mapSafeAccess(map<string, JSONParserWrapper>* mpJSON, string strKey, JSONParserWraperType dataType);
+	void* mapSafeAccess(map<string, void*>* mpJSON, string strKey); // 不建议使用
+	int mapDelete(map<string, void*>* mpJSON); // 不建议使用
+	int mapDelete(map<string, JSONParserWrapper>* mpJSON);
 private:
-	int vecDelete(vector<void*>* vecJSON);
+	int vecDelete(vector<void*>* vecJSON); // 不建议使用
+	int vecDelete(vector<JSONParserWrapper>* vecJSON);
 	string vecDissemble(vector<JSONParserWrapper>* vcJSONObj);
 };
 

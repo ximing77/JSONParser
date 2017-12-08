@@ -25,7 +25,7 @@ int TestJSONParser()
 	JSONParser parser;
 	for (int i = 0; i < nRight; ++i)
 	{
-		map<string, void*>* pMapResult = parser.parse(arrJSON[i]);
+		map<string, JSONParserWrapper>* pMapResult = parser.wrapperParse(arrJSON[i]);
 		if (pMapResult == NULL)
 		{
 			return 1;
@@ -33,7 +33,7 @@ int TestJSONParser()
 	}
 	for (int j = nRight; j < nCount; ++j)
 	{
-		map<string, void*>* pMapResult = parser.parse(arrJSON[j]);
+		map<string, JSONParserWrapper>* pMapResult = parser.wrapperParse(arrJSON[j]);
 		if (pMapResult != NULL)
 		{
 			return 2;
